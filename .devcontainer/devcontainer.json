@@ -1,0 +1,14 @@
+{
+    //"image":URL
+    "name": "docker_tempalte",
+    "build":{"dockerfile": "Dockerfile"},
+    "customizations": {
+        "vscode": {
+          "extensions": [
+            "ms-vscode-remote.remote-containers",
+            "ms-azuretools.vscode-docker",
+            "mhutchie.git-graph"
+            ]
+        }
+      }
+}
