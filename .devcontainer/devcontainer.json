@@ -7,7 +7,9 @@
           "extensions": [
             "ms-vscode-remote.remote-containers",
             "ms-azuretools.vscode-docker",
-            "mhutchie.git-graph"
+            "mhutchie.git-graph",
+            "xaver.clang-format",
+            "ms-vscode.cpptools-extension-pack"
             ]
         }
       }
