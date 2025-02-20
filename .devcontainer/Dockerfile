@@ -23,3 +23,5 @@ RUN apt-get install -y \
 
 # Set the working directory in the container
 WORKDIR /workspace/template
+
+ENV XDG_RUNTIME_DIR=/tmp
