@@ -3,36 +3,23 @@ RUN apt-get update -y
 RUN apt-get upgrade -y
 RUN apt-get install -y curl git
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get install -y \
+    gcc \
+    g++ \
+    gcc-multilib \
+    g++-multilib \
     build-essential \
-    git \
-    make \
-    pkg-config \
-    cmake \
-    gnome-desktop-testing \
-    libasound2-dev \
-    libpulse-dev \
-    libaudio-dev \
-    libjack-dev \
-    libsndio-dev \
-    libx11-dev \
-    libxext-dev \
-    libxrandr-dev \
-    libxcursor-dev \
-    libxfixes-dev \
-    libxi-dev \
-    libxss-dev \
-    libxkbcommon-dev \
-    libdrm-dev \
-    libgbm-dev \
-    libgl1-mesa-dev \
-    libgles2-mesa-dev \
-    libegl1-mesa-dev \
-    libdbus-1-dev \
-    libibus-1.0-dev \
-    libudev-dev \
-    fcitx-libs-dev \
-&& apt-get clean
+    xutils-dev \
+    libsdl2-dev \
+    libsdl2-gfx-dev \
+    libsdl2-image-dev \
+    libsdl2-mixer-dev \
+    libsdl2-net-dev \
+    libsdl2-ttf-dev \
+    libreadline6-dev \
+    libncurses5-dev \
+    mingw-w64 \
+    cmake
 
 # Set the working directory in the container
 WORKDIR /workspace/template

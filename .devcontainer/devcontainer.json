@@ -7,7 +7,8 @@
           "extensions": [
             "mhutchie.git-graph",
             "ms-azuretools.vscode-docker",
-            "ms-vscode.cmake-tools"
+            "ms-vscode.cmake-tools",
+            "ms-vscode.cpptools-extension-pack"
             ]
         }
       }
