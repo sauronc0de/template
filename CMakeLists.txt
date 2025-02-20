@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(SDL2 REQUIRED)
 
 # External libraries
-add_subdirectory(external)
+# add_subdirectory(external)
 
 # Examples
 add_subdirectory(examples/SDL2_hellow_world)
