@@ -3,6 +3,7 @@ RUN apt-get update -y
 RUN apt-get upgrade -y
 RUN apt-get install -y curl git
 
+# C++ environment and SDL2
 RUN apt-get install -y \
     gcc \
     g++ \
@@ -20,6 +21,9 @@ RUN apt-get install -y \
     libncurses5-dev \
     mingw-w64 \
     cmake
+
+# Utilities
+RUN apt-get update && apt install -y clang-format clangd
 
 # Set the working directory in the container
 WORKDIR /workspace/template

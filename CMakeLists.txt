@@ -8,6 +8,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Find the SDL2 package
 find_package(SDL2 REQUIRED)
+find_package(SDL2_image REQUIRED)
+
+# Add defines of project
+add_definitions(-DASSETS_PATH="${CMAKE_SOURCE_DIR}/assets")
 
 # External libraries
 # add_subdirectory(external)
