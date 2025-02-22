@@ -13,8 +13,12 @@ find_package(SDL2_image REQUIRED)
 # Add defines of project
 add_definitions(-DASSETS_PATH="${CMAKE_SOURCE_DIR}/assets")
 
+# Internal libraries
+add_subdirectory(libraries/rendering_system)
+
 # External libraries
 # add_subdirectory(external)
 
 # Examples
-add_subdirectory(examples/SDL2_hellow_world)
+# add_subdirectory(examples/SDL2_hellow_world)
+add_subdirectory(examples/rendering_system)
