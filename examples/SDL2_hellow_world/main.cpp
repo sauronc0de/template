@@ -4,16 +4,24 @@
 // run with: ./hello_sdl2
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <SDL2/SDL_rect.h>
+#include <SDL2/SDL_render.h>
 #include <string>
 
 SDL_Texture *playerTex;
+SDL_Rect playerRect = {8, 8, 64, 64};
+SDL_Rect playerRect2 = {128, 128, 64, 64};
 
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 480
 
+#ifndef ASSETS_PATH
+#define ASSETS_PATH "/assets/path/"
+#endif
+
 int main(int argc, char *args[])
 {
-  std::string assetPath = ASSETS_PATH; // Provided by CMake
+  std::string assetPath = ASSETS_PATH;
   std::string imagePath = assetPath + "/img/surrender.png";
 
   SDL_Window *window = NULL;
@@ -32,22 +40,21 @@ int main(int argc, char *args[])
     fprintf(stderr, "could not create window: %s\n", SDL_GetError());
     return 1;
   }
-  screenSurface = SDL_GetWindowSurface(window);
-  SDL_FillRect(screenSurface, NULL,
-               SDL_MapRGB(screenSurface->format, 0xFF, 0xFF, 0xFF));
-  SDL_UpdateWindowSurface(window);
 
   // Add render here
   SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, 0);
+  SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
   SDL_Surface *tmpSurface = IMG_Load(imagePath.c_str());
   playerTex = SDL_CreateTextureFromSurface(renderer, tmpSurface);
   SDL_FreeSurface(tmpSurface);
   SDL_RenderClear(renderer);
-  SDL_RenderCopy(renderer, playerTex, NULL, NULL);
+  SDL_RenderCopy(renderer, playerTex, NULL, &playerRect);
+  SDL_RenderCopy(renderer, playerTex, NULL, &playerRect2);
   SDL_RenderPresent(renderer);
 
   SDL_Delay(2000);
   SDL_DestroyWindow(window);
+  SDL_DestroyRenderer(renderer);
   SDL_Quit();
   return 0;
 }
