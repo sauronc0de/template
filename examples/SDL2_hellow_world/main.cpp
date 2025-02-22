@@ -4,8 +4,6 @@
 // run with: ./hello_sdl2
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
-#include <iostream>
-#include <ostream>
 #include <string>
 
 SDL_Texture *playerTex;
@@ -42,15 +40,13 @@ int main(int argc, char *args[])
   // Add render here
   SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, 0);
   SDL_Surface *tmpSurface = IMG_Load(imagePath.c_str());
-  std::cout << imagePath << std::endl;
-  std::cout << "Assets are located at: " << ASSETS_PATH << std::endl;
   playerTex = SDL_CreateTextureFromSurface(renderer, tmpSurface);
   SDL_FreeSurface(tmpSurface);
   SDL_RenderClear(renderer);
   SDL_RenderCopy(renderer, playerTex, NULL, NULL);
   SDL_RenderPresent(renderer);
 
-  SDL_Delay(20000);
+  SDL_Delay(2000);
   SDL_DestroyWindow(window);
   SDL_Quit();
   return 0;
