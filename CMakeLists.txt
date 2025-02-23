@@ -6,6 +6,11 @@ project(${ProjectName} LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Clang as a compiler
+set(CMAKE_C_COMPILER clang)
+set(CMAKE_CXX_COMPILER clang++)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 # Find the SDL2 package
 find_package(SDL2 REQUIRED)
 find_package(SDL2_image REQUIRED)

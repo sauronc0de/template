@@ -8,19 +8,8 @@
     "configurePresets": [
       {
         "name": "default",
-        "hidden": false,
-        "binaryDir": "${sourceDir}/build/${presetName}",
-        "cacheVariables": {
-          "CMAKE_BUILD_TYPE": "Release"
-        }
-      },
-      {
-        "name": "debug",
-        "hidden": false,
-        "binaryDir": "${sourceDir}/build/${presetName}",
-        "cacheVariables": {
-          "CMAKE_BUILD_TYPE": "Debug"
-        }
+        "description": "Default build",
+        "binaryDir": "${sourceDir}/build"
       }
     ]
   }

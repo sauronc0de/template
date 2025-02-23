@@ -22,6 +22,9 @@ RUN apt-get install -y \
     mingw-w64 \
     cmake
 
+# Add clang compiler
+RUN apt-get install -y clang
+
 # Utilities
 RUN apt-get update && apt install -y clang-format clangd
 

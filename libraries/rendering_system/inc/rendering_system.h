@@ -13,6 +13,34 @@ private:
   SDL_Window *window = nullptr;
   SDL_Surface *screenSurface = nullptr;
   SDL_Renderer *renderer = nullptr;
+  SDL_Texture *playerTex;
+  SDL_Rect playerRect = {8, 8, 64, 64};
+  SDL_Texture *CreateCircleTexture(SDL_Renderer *renderer, int radius)
+  {
+    int diameter = radius * 2;
+    SDL_Texture *texture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, diameter, diameter);
+    if(!texture)
+      return nullptr;
+
+    SDL_SetRenderTarget(renderer, texture);
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0); // Transparent background
+    SDL_RenderClear(renderer);
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // White circle
+
+    for(int y = -radius; y <= radius; y++)
+    {
+      for(int x = -radius; x <= radius; x++)
+      {
+        if(x * x + y * y <= radius * radius)
+        {
+          SDL_RenderDrawPoint(renderer, x + radius, y + radius);
+        }
+      }
+    }
+
+    SDL_SetRenderTarget(renderer, nullptr);
+    return texture;
+  }
 
 public:
   RenderingSystemAO()
@@ -38,7 +66,7 @@ public:
     {
       throw std::runtime_error(std::string("could not create renderer: ") + SDL_GetError());
     }
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
     SDL_Delay(2000);
   }
 
@@ -47,5 +75,14 @@ public:
     SDL_DestroyWindow(window);
     SDL_DestroyRenderer(renderer);
     SDL_Quit();
+  }
+
+  void update()
+  {
+    playerTex = CreateCircleTexture(renderer, 50);
+    SDL_RenderClear(renderer);
+    SDL_RenderCopy(renderer, playerTex, NULL, &playerRect);
+    SDL_RenderPresent(renderer);
+    SDL_Delay(2000);
   }
 };

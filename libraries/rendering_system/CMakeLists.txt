@@ -1,8 +1,6 @@
 add_library(rendering_system STATIC src/rendering_system.cpp)
 
-target_include_directories(rendering_system PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/inc
-)
+target_include_directories(rendering_system PUBLIC inc)
 
 target_include_directories(rendering_system PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/priv
