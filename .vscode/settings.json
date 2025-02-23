@@ -1,6 +1,9 @@
 {
     "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
     "editor.formatOnSave": true,
+    "clangd.arguments": [
+        "--compile-commands-dir=${workspaceFolder}/build"
+    ],
     "cmake.options.advanced": {
         "build": {
             "statusBarVisibility": "inherit",
