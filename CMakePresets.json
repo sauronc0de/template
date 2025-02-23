@@ -7,9 +7,14 @@
     },
     "configurePresets": [
       {
-        "name": "default",
-        "description": "Default build",
-        "binaryDir": "${sourceDir}/build"
+        "name": "Release",
+        "description": "✅ Release preset",
+        "binaryDir": "${sourceDir}/build/${presetName}"
+      },      
+      {
+        "name": "Test",
+        "description": "🧪 Execute test",
+        "binaryDir": "${sourceDir}/build/${presetName}"
       }
     ]
   }
