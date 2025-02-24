@@ -10,7 +10,8 @@
             "llvm-vs-code-extensions.vscode-clangd",
             "ms-azuretools.vscode-docker",
             "aaron-bond.better-comments",
-            "seunlanlege.action-buttons"
+            "seunlanlege.action-buttons",
+            "ms-vscode.makefile-tools"
             ]
         }
       }
