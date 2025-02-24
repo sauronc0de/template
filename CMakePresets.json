@@ -9,12 +9,12 @@
       {
         "name": "Release",
         "description": "✅ Release preset",
-        "binaryDir": "${sourceDir}/build/"
+        "binaryDir": "${sourceDir}/build/${presetName}"
       },      
       {
         "name": "Test",
         "description": "🧪 Execute test",
-        "binaryDir": "${sourceDir}/build/"
+        "binaryDir": "${sourceDir}/build/${presetName}"
       }
     ]
   }

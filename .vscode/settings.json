@@ -2,7 +2,7 @@
     "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
     "editor.formatOnSave": true,
     "clangd.arguments": [
-        "--compile-commands-dir=${workspaceFolder}/build"
+        "--compile-commands-dir=${workspaceFolder}/build/${command:cmake.activeConfigurePresetName}"
     ],
     "cmake.options.advanced": {
         "build": {
