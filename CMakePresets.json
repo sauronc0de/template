@@ -6,7 +6,7 @@
         "description": "General build",
         "hidden": true,
         "generator": "Unix Makefiles",
-        "binaryDir": "${sourceDir}/build/${presetName}"
+        "binaryDir": "${sourceDir}/build"
       },
       {
         "name": "Release",
