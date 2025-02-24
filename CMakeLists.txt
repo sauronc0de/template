@@ -42,5 +42,5 @@ add_subdirectory(libraries/rendering_system)
 add_subdirectory(examples/rendering_system)
 
 # Executable
-add_executable(ProjectName src/main.cpp)
-target_link_libraries(ProjectName PRIVATE SDL2::SDL2)
+add_executable(${ProjectName} src/main.cpp)
+target_link_libraries(${ProjectName} PRIVATE SDL2::SDL2)
