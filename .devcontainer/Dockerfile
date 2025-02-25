@@ -26,7 +26,19 @@ RUN apt-get install -y \
 RUN apt-get install -y clang
 
 # Utilities
-RUN apt-get update && apt install -y clang-format clangd
+RUN apt-get update && apt-get install -y clang-format clangd
+
+# Install sudo and create a user
+RUN apt-get update && apt-get install -y sudo
+#👥 Create a non-root user 'sauroncode' with password '1234', grant sudo access without password
+RUN useradd -m sauroncode && echo "sauroncode:1234" | chpasswd && adduser sauroncode sudo
+RUN echo "%sudo ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+# Add user 'sauroncode' to plugdev and dialout groups for USB access
+RUN sudo usermod -aG plugdev sauroncode && sudo usermod -aG dialout sauroncode
+
+# Switch to 'sauroncode' user
+USER sauroncode
 
 # Set the working directory in the container
 WORKDIR /workspace/template
