@@ -26,7 +26,7 @@ RUN apt-get install -y \
 RUN apt-get install -y clang
 
 # Utilities
-RUN apt-get update && apt-get install -y clang-format clangd
+RUN apt-get update && apt-get install -y clang-format clangd lldb
 
 # Install sudo and create a user
 RUN apt-get update && apt-get install -y sudo

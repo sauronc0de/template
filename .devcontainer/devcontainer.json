@@ -10,7 +10,8 @@
             "ms-azuretools.vscode-docker",
             "aaron-bond.better-comments",
             "seunlanlege.action-buttons",
-            "ms-vscode.makefile-tools"
+            "ms-vscode.makefile-tools",
+            "vadimcn.vscode-lldb"
             ]
         }
       }
