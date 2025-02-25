@@ -1,6 +1,5 @@
 {
-    //"image":URL
-    "name": "template",
+    "name": "🐳[📄]",
     "build":{"dockerfile": "Dockerfile"},
     "customizations": {
         "vscode": {
