@@ -6,7 +6,10 @@
         "description": "General build",
         "hidden": true,
         "generator": "Unix Makefiles",
-        "binaryDir": "${sourceDir}/build"
+        "binaryDir": "${sourceDir}/build",
+        "cacheVariables": {
+          "CMAKE_BUILD_TYPE": "Debug"
+        }
       },
       {
         "name": "Release",
