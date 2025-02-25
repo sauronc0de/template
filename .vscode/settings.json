@@ -1,6 +1,8 @@
 {
     "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
     "editor.formatOnSave": true,
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "git.postCommitCommand": "push",
     "clangd.arguments": [
         "--compile-commands-dir=${workspaceFolder}/build"
     ],
