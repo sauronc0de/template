@@ -37,9 +37,6 @@ RUN echo "%sudo ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 # Add user 'sauroncode' to plugdev and dialout groups for USB access
 RUN sudo usermod -aG plugdev sauroncode && sudo usermod -aG dialout sauroncode
 
-# Convert all folders and files to the user 'sauroncode'
-RUN chown -R sauroncode:sauroncode /workspace
-
 # Switch to 'sauroncode' user
 USER sauroncode
 
